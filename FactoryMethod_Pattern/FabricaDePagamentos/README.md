@@ -9,8 +9,8 @@
 
 
 ## Diagrama de Classes do Factory Method
+<img width="1307" height="610" alt="image" src="https://github.com/user-attachments/assets/8f79407a-9c79-442d-9374-9e8cbc10361b" />
 
-![Diagrama de classes do Factory Method](image-1.png)
 
 ## Objetivo
 
