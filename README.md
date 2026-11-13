@@ -9,4 +9,4 @@ Estes projetos não são implementações ativas das integrações. Usei essas i
 ## Projetos
 
 - [Builder Pattern - Processando uma NFSe Nacional](Builder_Pattern/NFSeNacional/README.md)
-- [Factory Method Pattern - Criando pagamentos](FactoryMethod_Pattern/README.md)
+- [Factory Method Pattern - Criando pagamentos](FactoryMethod_Pattern/FabricaDePagamentos/README.md)
