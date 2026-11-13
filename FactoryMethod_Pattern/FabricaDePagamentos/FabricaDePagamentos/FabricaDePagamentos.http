@@ -1,0 +1,6 @@
+@FabricaDePagamentos_HostAddress = http://localhost:5044
+
+GET {{FabricaDePagamentos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NFSeNacional")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52f542f4c3564ce3b2dd234f6eb88cdfbe164760")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae3be897cdaaedec126530adcf500db6b001494b")]
 [assembly: System.Reflection.AssemblyProductAttribute("NFSeNacional")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NFSeNacional")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,12 +5,12 @@ using NFSe;
 
 public class BackgroundDirector : BackgroundService
 {
-    private readonly IServiceScopeFactory _scopeFactory;
+    private readonly IServiceScopeFactory _scopo;
     private readonly ILogger<BackgroundDirector> _logger;
 
     public BackgroundDirector(IServiceScopeFactory scopeFactory, ILogger<BackgroundDirector> logger)
     {
-        _scopeFactory = scopeFactory;
+        _scopo = scopeFactory;
         _logger = logger;
     }
 
@@ -22,28 +22,55 @@ public class BackgroundDirector : BackgroundService
         {
             try
             {
-                using var scope = _scopeFactory.CreateScope();
-                var db = scope.ServiceProvider.GetRequiredService<MyDbContext>();
+                using var escopo = _scopo.CreateScope();
+                var bd = escopo.ServiceProvider.GetRequiredService<BDExemplo>();
                 var builder = new NFSeBuilder();
 
-                List<NFSeNacional> pending = await db.FilaProcessamentoNotas
-                    .Where(o => o.Status == "PENDENTE")
-                    .ToListAsync<NFSeNacional>(stoppingToken);
+                var pendentes = bd.FilaProcessamentoNotas
+                    .Where(o => o.Status == "PENDENTE")                    
+                    .ToList();
 
-                foreach (var nota in pending)
+                foreach (var fila in pendentes)
                 {
-                    var tx2 = "";
-                    tx2 += builder.Cabecalho();
-                    tx2 += builder.DPS(nota);
-                }
+                    try
+                    {
+                        var xml = builder.Cabecalho() + builder.DPS(fila.nota);
+                        // Disparo dos dados via integração        
 
-                // Disparo dos dados via integração
+                        fila.Status = "ENVIADO";
+                        fila.DataEnvio = DateTime.Now;
+                    }
+                    catch (Exception ex)
+                    {
+                        fila.Status = "ERRO";
+                        fila.MensagemErro = ex.Message;
+                        // log...
+                    }
+                }                
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Polling failed");
+                _logger.LogError(ex, "Erro durante o processamento da fila de notas pendentes.");
             }
         }
         while (await timer.WaitForNextTickAsync(stoppingToken));
     }
 }
+
+#region Simulando Acesso ao Banco de Dados
+internal class BDExemplo
+{
+    public IEnumerable<FilaProcessamentoNotas> FilaProcessamentoNotas { get; internal set; }
+}
+
+internal class FilaProcessamentoNotas
+{
+    public string Status { get; set; }
+
+    public string MensagemErro { get; set; }
+
+    public DateTime DataEnvio { get; set; }
+
+    public NFSeNacional nota { get; set; }
+}
+#endregion

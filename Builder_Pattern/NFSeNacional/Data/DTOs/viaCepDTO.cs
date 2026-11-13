@@ -1,4 +1,4 @@
-public class ViaCEPDTO
+public abstract class ViaCEPDTO
 {
     public string cep {get;set;}
     public string logradouro {get;set;}

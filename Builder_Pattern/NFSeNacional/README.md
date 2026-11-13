@@ -1,7 +1,6 @@
 # Builder Pattern - Processando uma NFSe Nacional
 
-Referências da documentação:
-- [Guia geral do componente NFSe Nacional (TecnoSpeed)](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/12236286816791-Guia-Geral-Componente-NFSe-Nacional)
+## Referências:
 - [Arquivo de integração TX2 - NFSe Padrão Nacional (TecnoSpeed)](https://atendimento.tecnospeed.com.br/hc/pt-br/articles/12263343956375-Arquivo-de-integra%C3%A7%C3%A3o-TX2-NFSe-Padr%C3%A3o-Nacional)
 
 ## Diagrama de Classes do Builder Pattern
@@ -12,7 +11,7 @@ Referências da documentação:
 
 Este projeto demonstra o Builder Pattern, um padrão criacional que organiza a construção de objetos complexos em etapas.
 
-No exemplo, usamos esse padrão para montar os dados de uma NFSe no padrão nacional em formato TX2. A interface [iNFSeBuilder](NFSeNacionalBuilder/iNFSeBuilder.cs) define as etapas de construção, e [NFSeBuilder](NFSeNacionalBuilder/NFSeBuilder.cs) implementa essas etapas. Assim, a montagem do conteúdo fica separada do fluxo que coordena o processamento.
+No exemplo, utilizei esse padrão para montar os dados de uma NFSe no padrão nacional em formato TX2(transmissão de dados específica via arquivo .txt). A interface [iNFSeBuilder](NFSeNacionalBuilder/iNFSeBuilder.cs) define as etapas de construção, e [NFSeBuilder](NFSeNacionalBuilder/NFSeBuilder.cs) implementa essas etapas. Assim, a montagem do conteúdo fica separada do fluxo que coordena o processamento.
 
 ## Como funciona
 
@@ -26,4 +25,4 @@ O fluxo representa os papéis do padrão da seguinte forma:
 
 ## Estado atual
 
-Atualmente, o projeto monta o conteúdo TX2 da DPS. O envio para processamento ainda está indicado como uma etapa futura no código. As etapas de deduções e documentos referenciados também estão previstas na interface, mas ainda não foram implementadas.
+Atualmente, o projeto monta o conteúdo TX2 da DPS. O envio para processamento ainda está indicado como uma etapa futura no código. As etapas de deduções e documentos referenciados foram apenas referenciadas, não são necessárias para entendimento do método.
