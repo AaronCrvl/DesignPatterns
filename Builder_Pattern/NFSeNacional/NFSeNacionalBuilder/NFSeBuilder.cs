@@ -1,15 +1,15 @@
 using System.Globalization;
 using NFSe;
 
-public class NFSeBuilder : iNFSeBuilder
+public static class NFSeBuilder
 {
-    public string Cabecalho() => """
+    public static string Cabecalho() => """
         formato=tx2
         padrao=TecnoNFSeNacional
         Versao=v1.01
     """;
 
-    public string DPS(NFSeNacional nota) => $"""
+    public static string DPS(NFSeNacional nota) => $"""
         INCLUIRDPS
 
         {/* DPS ============================= */      string.Empty}
@@ -48,7 +48,7 @@ public class NFSeBuilder : iNFSeBuilder
         SALVARDPS
     """;
 
-    public string Prestador(NFSeNacional nota) => $"""
+    public static string Prestador(NFSeNacional nota) => $"""
         {/* PRESTADOR ============================= */      string.Empty}
         CpfCnpjPrestador={nota.OBJ_PRESTADOR.TX_CNPJ}
         InscricaoMunicipalPrestador={nota.OBJ_PRESTADOR.TX_INSCRICAO_MUNICIPAL}
@@ -64,7 +64,7 @@ public class NFSeBuilder : iNFSeBuilder
         OptanteSimplesNacional={(nota.OBJ_PRESTADOR.IN_EH_OPTANTE_SIMPLES_NACIONAL ? (nota.OBJ_PRESTADOR.IN_EH_ME_EPP ? 3 : (nota.OBJ_PRESTADOR.IN_EH_MEI ? 2 : 0)) : 1)}
     """;
 
-    public string Tomador(NFSeNacional nota) => $"""
+    public static string Tomador(NFSeNacional nota) => $"""
         {/* TOMADOR ============================= */      string.Empty}
         CpfCnpjTomador={nota.OBJ_TOMADOR.TX_CNPJ}
         InscricaoMunicipalTomador={nota.OBJ_TOMADOR.TX_INSCRICAO_MUNICIPAL}
@@ -79,7 +79,7 @@ public class NFSeBuilder : iNFSeBuilder
         EmailTomador={nota.OBJ_TOMADOR.TX_EMAIL}        
     """;
 
-    public string Servico(NFSeNacional nota) => $"""
+    public static string Servico(NFSeNacional nota) => $"""
         {/* SERVICO ============================= */      string.Empty}
         CodigoItemListaServico={nota.OBJ_SERVICO.TX_CODIGO_ITEM_LISTA_SERVICO}
         CodigoTributacaoMunicipio={nota.OBJ_SERVICO.TX_CODIGO_TRIBUTACAO_MUNICIPIO}
@@ -101,7 +101,7 @@ public class NFSeBuilder : iNFSeBuilder
         ValorTotalTribMun={nota.OBJ_SERVICO.VL_VALOR_TOTAL_TRIB_MUN.ToString("F2", CultureInfo.InvariantCulture)}
     """;
 
-    public string IBSCBS(NFSeNacional nota) => $"""
+    public static string IBSCBS(NFSeNacional nota) => $"""
         {/* IBS/CBS ============================= */      string.Empty}
         SituacaoTributariaIbsCbs={nota.OBJ_SERVICO.TX_SITUACAO_TRIBUTARIA_IBS_CBS}
         ClassificacaoTributariaIbsCbs={nota.OBJ_SERVICO.TX_CLASSIFICACAO_TRIBUTARIA_IBS_CBS}
@@ -113,23 +113,13 @@ public class NFSeBuilder : iNFSeBuilder
         ValorCbs={nota.OBJ_SERVICO.VL_VALOR_CBS.ToString("F2", CultureInfo.InvariantCulture)}
     """;
 
-    string Deducao()
+    static string Deducao()
     {
-        throw new NotImplementedException();
+        return string.Empty;
     }
 
-    string iNFSeBuilder.Deducao()
+    static string DocumentosReferenciados()
     {
-        return Deducao();
-    }
-
-    string DocumentosReferenciados()
-    {
-        throw new NotImplementedException();
-    }
-
-    string iNFSeBuilder.DocumentosReferenciados()
-    {
-        return DocumentosReferenciados();
+        return string.Empty;
     }
 }

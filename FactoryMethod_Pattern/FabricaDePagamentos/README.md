@@ -14,7 +14,13 @@
 
 ## Objetivo
 
-Neste projeto, eu uso o Factory Method para criar o tipo de pagamento adequado sem deixar essa escolha espalhada pelos pontos de entrada da aplicação. O cenário trabalha com pagamentos via Pix e cartão de crédito, representados por [PagamentoPix](FabricaDePagamentos/FabricaDePagamentos/Data/PagamentoPix.cs) e [PagamentoCartao](FabricaDePagamentos/FabricaDePagamentos/Data/PagamentoCartao.cs).
+O Factory Method Pattern é um modelo criacional que define uma interface geral, mas permite que as subclasses decidam qual implementação fazer.
+
+Este padrão pode ser exemplificado como uma fábrica que pode receber diversos pedidos com características diferentes e é capaz de tratá-los de maneira adequada internamente.
+
+Neste projeto, eu uso o Factory Method para criar o tipo de pagamento adequado sem deixar essa escolha espalhada pelos pontos de entrada da aplicação.
+
+O cenário trabalha com pagamentos via Pix e cartão de crédito, representados por [PagamentoPix](FabricaDePagamentos/FabricaDePagamentos/Data/PagamentoPix.cs) e [PagamentoCartao](FabricaDePagamentos/FabricaDePagamentos/Data/PagamentoCartao.cs).
 
 ## Como funciona
 

@@ -24,17 +24,16 @@ public class BackgroundDirector : BackgroundService
             {
                 using var escopo = _scopo.CreateScope();
                 var bd = escopo.ServiceProvider.GetRequiredService<BDExemplo>();
-                var builder = new NFSeBuilder();
 
                 var pendentes = bd.FilaProcessamentoNotas
-                    .Where(o => o.Status == "PENDENTE")                    
+                    .Where(o => o.Status == "PENDENTE")
                     .ToList();
 
                 foreach (var fila in pendentes)
                 {
                     try
                     {
-                        var xml = builder.Cabecalho() + builder.DPS(fila.nota);
+                        var xml = NFSeBuilder.Cabecalho() + NFSeBuilder.DPS(fila.nota);
                         // Disparo dos dados via integração        
 
                         fila.Status = "ENVIADO";
@@ -46,7 +45,7 @@ public class BackgroundDirector : BackgroundService
                         fila.MensagemErro = ex.Message;
                         // log...
                     }
-                }                
+                }
             }
             catch (Exception ex)
             {

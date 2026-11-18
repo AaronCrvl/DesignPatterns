@@ -1,6 +1,6 @@
 # DesignPatterns
 
-Design patterns não são meu ponto forte, então decidi mudar isso criando projetos com cenários reais para praticar cada um dos sete patterns que já estudei. Cada pattern tem seu próprio projeto, onde trabalho sua arquitetura na prática.
+Design patterns não erma meu ponto forte, então decidi mudar isso criando projetos com cenários reais para praticar cada um dos sete patterns que já estudei. Cada pattern tem seu próprio projeto, onde trabalho sua arquitetura na prática.
 
 Os projetos são inspirados em exemplos de um módulo de integração aberta e nas documentações que encontrei.
 
@@ -10,3 +10,4 @@ Estes projetos não são implementações ativas das integrações. Usei essas i
 
 - [Builder Pattern - Processando uma NFSe Nacional](Builder_Pattern/NFSeNacional/README.md)
 - [Factory Method Pattern - Criando pagamentos](FactoryMethod_Pattern/FabricaDePagamentos/README.md)
+- [Decorator Pattern - Gerenciando envio de mensagens (SMTP, SMS, WhatsApp, etc..)](Decorator_Pattern/ServicoRedirecionamentoSMTP/README.md) (IN PROGRESS)
