@@ -1,6 +1,6 @@
 # DesignPatterns
 
-Design patterns não eram um dos meus pontos fortes, então decidi mudar isso criando projetos com cenários reais para praticar cada um dos sete patterns que já estudei. Cada pattern tem seu próprio projeto, onde trabalho sua arquitetura na prática.
+Design patterns não era um dos meus pontos fortes, então decidi mudar isso criando projetos com cenários reais para praticar cada um dos sete patterns que já estudei. Cada pattern tem seu próprio projeto, onde trabalho sua arquitetura na prática.
 
 Os projetos são inspirados em exemplos de um módulo de integração aberta e nas documentações que encontrei.
 
