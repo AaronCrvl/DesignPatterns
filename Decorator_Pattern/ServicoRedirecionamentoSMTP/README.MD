@@ -1,8 +1,8 @@
 # Decorator Pattern - Serviço SMTP
 
 ## Referências:
-[Twilio Helpers](https://www.twilio.com/docs/libraries/reference/twilio-csharp/index.html)
-[Twilio(WhatsApp/SMS)](https://jussiroine.com/2020/05/building-a-notification-tool-using-net-core-twilio-and-whatsapp-messages/)
+- [Twilio Helpers](https://www.twilio.com/docs/libraries/reference/twilio-csharp/index.html)
+- [Twilio(WhatsApp/SMS)](https://jussiroine.com/2020/05/building-a-notification-tool-using-net-core-twilio-and-whatsapp-messages/)
 
 ## Diagrama de Classes do Decorator
 ![Diagrama UML](assets/UML.png)
