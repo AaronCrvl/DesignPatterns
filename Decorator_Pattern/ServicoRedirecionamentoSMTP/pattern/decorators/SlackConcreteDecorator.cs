@@ -14,7 +14,7 @@ namespace RedirecionamentoSMTP.Decorators
             return "";
         }
 
-        public override async Task<bool> ConectarEEnviar(MimeMessage mensagemDTO)
+        public override async Task<bool> ConectarEEnviarAsync(MimeMessage mensagemDTO)
         {
             try
             {

@@ -4,5 +4,5 @@ using MimeKit;
 public interface iNotificador
 {
     Task<string> CriarMensagemAsync(string Mensagem, string Assunto, string Destinatario, Fatura faturaParaEnviar);
-    Task<bool> ConectarEEnviar(MimeMessage mensagemDTO);
+    Task<bool> ConectarEEnviarAsync(MimeMessage mensagemDTO);
 }

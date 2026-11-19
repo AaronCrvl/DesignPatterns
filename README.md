@@ -10,4 +10,4 @@ Estes projetos não são implementações ativas das integrações. Usei essas i
 
 - [Builder Pattern - Processando uma NFSe Nacional](Builder_Pattern/NFSeNacional/README.md)
 - [Factory Method Pattern - Criando pagamentos](FactoryMethod_Pattern/FabricaDePagamentos/README.md)
-- [Decorator Pattern - Gerenciando envio de mensagens (SMTP, SMS, WhatsApp, etc..)](Decorator_Pattern/ServicoRedirecionamentoSMTP/README.md) (IN PROGRESS)
+- [Decorator Pattern - Gerenciando envio de mensagens (SMTP, SMS, WhatsApp, etc..)](Decorator_Pattern/ServicoRedirecionamentoSMTP/README.MD) (IN PROGRESS)

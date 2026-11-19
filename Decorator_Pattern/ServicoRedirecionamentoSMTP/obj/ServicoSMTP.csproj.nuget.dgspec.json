@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoRedirecionamentoSMTP.csproj": {}
+    "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoSMTP.csproj": {}
   },
   "projects": {
-    "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoRedirecionamentoSMTP.csproj": {
+    "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoSMTP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoRedirecionamentoSMTP.csproj",
-        "projectName": "ServicoRedirecionamentoSMTP",
-        "projectPath": "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoRedirecionamentoSMTP.csproj",
+        "projectUniqueName": "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoSMTP.csproj",
+        "projectName": "ServicoSMTP",
+        "projectPath": "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/ServicoSMTP.csproj",
         "packagesPath": "/home/usuario/.nuget/packages/",
         "outputPath": "/home/usuario/DesignPatterns/Decorator_Pattern/ServicoRedirecionamentoSMTP/obj/",
         "projectStyle": "PackageReference",
@@ -58,6 +58,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[8.2.0, )"
             }
           },
           "imports": [

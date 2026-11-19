@@ -5,7 +5,6 @@ using MailKit.Security;
 using MimeKit;
 
 // TODO:
-//  - Modularização das validações de valores de variáveis vindas dos arquivos config - OK
 //  - Incorporar um cenário real de mensagem de fatura
 namespace RedirecionamentoSMTP.Componentes
 {
@@ -30,14 +29,14 @@ namespace RedirecionamentoSMTP.Componentes
             mensagem.Subject = Assunto;
             mensagem.Body = new TextPart("plain") { Text = Mensagem };
 
-            var foiEnviado = await ConectarEEnviar(mensagem);
+            var foiEnviado = await ConectarEEnviarAsync(mensagem);
             if (foiEnviado)
                 return "Mensagem enviada via e-mail";
 
             throw new InvalidOperationException("Não foi possível enviar a mensagem por e-mail. Problemas de configuração de mensagem.");
         }
 
-        public async Task<bool> ConectarEEnviar(MimeMessage mensagemDTO)
+        public async Task<bool> ConectarEEnviarAsync(MimeMessage mensagemDTO)
         {
             try
             {
