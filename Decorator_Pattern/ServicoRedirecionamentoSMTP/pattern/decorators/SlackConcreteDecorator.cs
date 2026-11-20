@@ -46,7 +46,6 @@ namespace RedirecionamentoSMTP.Decorators
                 {
                     Text = textoMensagem,
                     Channel = mensagemDTO.Subject,
-
                 };
 
                 var resultado = await client.SendAsync(slackMessage);
