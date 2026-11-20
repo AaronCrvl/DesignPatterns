@@ -34,7 +34,7 @@ public class Worker : BackgroundService
 
             var options = new ParallelOptions
             {
-                MaxDegreeOfParallelism = 5,// supondo um caso de 5 faturas por vez
+                MaxDegreeOfParallelism = 5,// supondo um caso de 5 envios por execução
                 CancellationToken = stoppingToken
             };
 
@@ -44,7 +44,7 @@ public class Worker : BackgroundService
                 var res = await componente.CriarMensagemAsync(
                         $"Olá! Segue em anexo os documentos da fatura relativa à {fatura.DataCriacao:yyyy/MM}",
                         $"Fatura - {fatura.DataCriacao:yyyy/MM}",
-                        fatura.Cliente.EmailCliente.Endereco,
+                        fatura.Cliente.EmailsCliente.FirstOrDefault()?.Endereco,
                         fatura
                     );
                 resultados.Add(res);

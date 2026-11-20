@@ -12,9 +12,9 @@ public class SMSMessenger : IMessenger
 
     public SMSMessenger(IConfiguration conf)
     {
-        idConta = conf["Integrações:WhatsApp:IdConta"] ?? "";
-        token = conf["Integrações:WhatsApp:Token"] ?? "";
-        numeroOrigem = conf["Integrações:WhatsApp:NumeroOrigem"] ?? "";
+        idConta = conf["Integrações:SMS:IdConta"] ?? "";
+        token = conf["Integrações:SMS:Token"] ?? "";
+        numeroOrigem = conf["Integrações:SMS:NumeroOrigem"] ?? "";
     }
     
     public bool EnviarMensagem(MimeMessage mensagem)

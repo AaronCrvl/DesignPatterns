@@ -2,7 +2,8 @@
 
 ## Referências:
 - [Twilio Helpers](https://www.twilio.com/docs/libraries/reference/twilio-csharp/index.html)
-- [Twilio(WhatsApp/SMS)](https://jussiroine.com/2020/05/building-a-notification-tool-using-net-core-twilio-and-whatsapp-messages/)
+- [WhatsApp / SMS - Twilio](https://jussiroine.com/2020/05/building-a-notification-tool-using-net-core-twilio-and-whatsapp-messages/)
+- [Slack - SlackBotMessages](https://github.com/prjseal/SlackBotMessages)
 
 ## Diagrama de Classes do Decorator
 ![Diagrama UML](assets/UML.png)

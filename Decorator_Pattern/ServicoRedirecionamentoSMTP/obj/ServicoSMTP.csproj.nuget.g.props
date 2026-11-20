@@ -12,4 +12,8 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/usuario/.nuget/packages/" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNuGet_CommandLine Condition=" '$(PkgNuGet_CommandLine)' == '' ">/home/usuario/.nuget/packages/nuget.commandline/4.9.3</PkgNuGet_CommandLine>
+    <PkgNuGet_Build Condition=" '$(PkgNuGet_Build)' == '' ">/home/usuario/.nuget/packages/nuget.build/2.12.1</PkgNuGet_Build>
+  </PropertyGroup>
 </Project>
