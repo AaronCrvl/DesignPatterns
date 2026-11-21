@@ -1,23 +1,21 @@
-# DesignPatterns
+# Design Patterns
 
-Design patterns não era um dos meus pontos fortes, então decidi mudar isso criando projetos com cenários reais para praticar cada um dos sete patterns que já estudei. Cada pattern tem seu próprio projeto, onde trabalho sua arquitetura na prática.
+Este repositório reúne projetos práticos para estudar padrões de projeto por meio de cenários inspirados em integrações e aplicações do dia a dia. Cada projeto apresenta o padrão em um contexto próprio; as integrações externas servem como referência e não estão conectadas a serviços reais.
 
-Os projetos são inspirados em exemplos de um módulo de integração aberta e nas documentações que encontrei.
+## Projetos
 
-Estes projetos não são implementações ativas das integrações. Usei essas integrações como referência para criar cenários de implementação. Se eu for integrar com alguma delas, este material também pode servir como um bom How-To!
+- [Builder Pattern — Processando uma NFSe Nacional](Builder_Pattern/NFSeNacional/README.md): construção de uma nota fiscal a partir de seus componentes.
+- [Factory Method Pattern — Criando pagamentos](FactoryMethod_Pattern/FabricaDePagamentos/README.md): criação de diferentes tipos de pagamento.
+- [Decorator Pattern — Gerenciando envio de mensagens](Decorator_Pattern/ServicoRedirecionamentoSMTP/README.MD): composição de canais de notificação.
+- [Facade Pattern — Finalizando pedidos](Facade_Pattern/README.md): coordenação do fluxo de estoque, pagamento, envio e notificação.
 
-## Projetos Trabalhados
+## Tecnologias e conceitos explorados
 
-- [Builder Pattern - Processando uma NFSe Nacional](Builder_Pattern/NFSeNacional/README.md)
-- [Factory Method Pattern - Criando pagamentos](FactoryMethod_Pattern/FabricaDePagamentos/README.md)
-- [Decorator Pattern - Gerenciando envio de mensagens (SMTP, SMS, WhatsApp, etc..)](Decorator_Pattern/ServicoRedirecionamentoSMTP/README.MD)
+Os projetos também permitem praticar recursos relacionados aos cenários, como criação de documentos em texto no Builder, consumo simulado de API e webhook no Factory Method, composição de integrações de mensageria no Decorator e injeção de dependências na Minimal API do Facade.
 
-## Objetivos Sundários e Relevantes
+No projeto Facade, o endpoint depende de `IPedidoFacade`, enquanto a fachada recebe as interfaces dos serviços internos. O `Program.cs` registra essas dependências com tempos de vida adequados ao exemplo:
 
-Este projeto abre espaço para aprendizado de demais tecnologias.
+- **Singleton:** uma instância compartilhada durante toda a execução da aplicação. É adequado aos serviços simulados sem estado por requisição.
+- **Scoped:** uma instância por requisição HTTP. A fachada é registrada dessa forma para manter seu ciclo de vida associado ao fluxo de cada pedido.
 
-- O [Builder Pattern](Builder_Pattern/) trabalha com uma integração com DTOs em modelo de arquivo texto específico e consigo explorar a tratativa de criação de string no C# 11.0.
-
-- O [Factory Method Pattern](FactoryMethod_Pattern/) trabalha com uma modularização de integrações com foco na integração do Mercado Pago, fazendo o consumo da API e do WebHook. Utilizo uma arquitetura de recebimento centralizada mas que é flexível para tratariva do produto, no caso, pagamento.
-
-- O [Decorator Pattern](Decorator_Pattern/) trabalha diretamente com diferente integrações de mensageria, visando criar um padrão de transmissão fléxivel com base em opções pré-configuradas.
+Essas escolhas dependem do estado e das dependências de cada serviço. Serviços com estado específico de uma requisição ou que dependem de componentes scoped, como um contexto de banco, também devem ter um ciclo de vida compatível.

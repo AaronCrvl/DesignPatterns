@@ -1,3 +1,3 @@
-# Remover arquivos e compilação dod envio do Git
+# Remover arquivos e compilação do envio do Git
 *.obj
 **/obj/
